@@ -1,27 +1,38 @@
-import Head from './Components/Layout/Head';
-import { Fragment, useState } from 'react';
-import Meals from './Components/Meals/Meals';
-import Cart from './Components/Cart/Cart';
-import CartProvider from '../src/Store/CartProvider'
+import React from 'react';
+import { BrowserRouter, Route , Routes } from 'react-router-dom';
+import Signin from './Components/Signin'
+import HomePage from './Components/HomePage';
+import Signup from './Components/Signup'
+import { AuthContextProvider } from './Components/Context/AuthContext';
+import ProtectedRoutes from './Components/ProtectedRoutes';
+
 function App() {
-
-  const [cartShown, setcartShown] = useState(false)
-  const cartHandler = () => {
-    setcartShown(true)
-  }
-  const carthideHandler = () => {
-    setcartShown(false)
-  }
-
   return (
-    <CartProvider>
-      {cartShown && <Cart onClose={carthideHandler} />}
-      <Head onShowCart={cartHandler} />
-      <main>
-        <Meals/>
-      </main>
-    </CartProvider>
+    <div className=''>
+
+      <AuthContextProvider>
+
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Signin />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/account' element={
+          
+          <ProtectedRoutes>
+          <HomePage /> 
+          </ProtectedRoutes>
+        }>
+            
+
+        </Route>
+      </Routes>
+      </BrowserRouter>
+
+      </AuthContextProvider>
+
+    </div>
   );
 }
 
 export default App;
+ 
