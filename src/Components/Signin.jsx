@@ -59,7 +59,7 @@ const Signin = () => {
             
           </div>
           <div className='text'>
-            <input onChange={(e) => setPassword(e.target.value)} placeholder='password' type="Password" required />
+            <input onChange={(e) => setPassword(e.target.value)} placeholder='Password' type="Password" required />
           </div>
           <button className='si'>Sign In</button>
           <p className='lol'>Don't have an account? <Link to='/signup'> Sign Up.</Link></p>

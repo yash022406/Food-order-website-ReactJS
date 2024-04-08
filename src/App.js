@@ -19,7 +19,7 @@ function App() {
         <Route path='/account' element={
           
           <ProtectedRoutes>
-          <HomePage /> 
+          <HomePage />
           </ProtectedRoutes>
         }>
             

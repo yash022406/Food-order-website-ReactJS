@@ -15,9 +15,13 @@
       
       
   }
-  .bg{
-      
-    }
+input{
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  height: 40px;
+  /* text-align: left; */
+}
   
    
    .cover{
@@ -74,22 +78,29 @@
    .text input{
     padding: 5px;
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
     text-decoration: black;
     align-items: center;
+    padding-left: 10px;
     margin-left: 10px;
     margin-top: 20px;
     border-radius: 3rem;
+    font-size: 15px;
     
     display: block;
    }
    .si{
     margin-top: 20px;
-    border-radius: 2em;
+    border-radius: 20px;
     width: 40%;
     align-items: center;
+    outline: none;
+    height: 40px;
     margin-left: 31%;
-    background-color: gainsboro;
+    
+    border: none;
+
+    /* background-color: gainsboro; */
    }
    .lol{
     margin-top: 10%;
